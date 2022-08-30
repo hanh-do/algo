@@ -21,3 +21,27 @@ class Solution {
         return [];
     }
 }
+
+class OtherSolution {
+
+    /**
+     * 
+     */
+    function twoSum(array $nums, int $target) {
+        $n = count($nums);
+        $valueAsKeys = [];
+
+        for ($i = 0; $i < $n; $i++) {
+            $valueAsKeys[$nums[$i]] = $i;
+        }
+
+        foreach ($nums as $key => $n) {
+            $complement = $target - $n;
+
+            if(in_array($complement, array_keys($valueAsKeys)) && $valueAsKeys[$complement] != $key) {
+                return [$key, $valueAsKeys[$complement]];
+            }
+        }
+        return [];
+    }
+}
