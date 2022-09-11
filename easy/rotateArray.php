@@ -2,8 +2,8 @@
 class Solution {
     /**
      * @var int $k
-     * $@var int[] $arr
-     * @return int[] $rotated
+     * @var int[] $arr
+     * @return ?int[] $rotated
      */
     public function rotateArray(array $nums, int $k) {
         // array that need to rotate 
@@ -30,7 +30,12 @@ class Solution {
 
         return $nums;
     }
-
+    /**
+     * @var int[] $nums
+     * @var int $start
+     * @var int $end
+     * @return int[]
+     */
     public function reverse(array $nums, int $start, int $end) {
         while($start < $end) {
             $tmp = $nums[$start];
