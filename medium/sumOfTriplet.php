@@ -5,7 +5,7 @@ class Solution {
      * Each number of the triplet should be the value of different index
      * Input: nums = [-1,0,1,2,-1,-4]
      * Output: [[-1,-1,2],[-1,0,1]]
-     * @var int[]
+     * @param int[]
      * @return array
      */
     function sumOfTriplet(array $nums) {
