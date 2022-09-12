@@ -1,8 +1,8 @@
 <?php
 class Solution {
     /**
-     * @var int $k
-     * @var int[] $arr
+     * @param int $k
+     * @param int[] $arr
      * @return ?int[] $rotated
      */
     public function rotateArray(array $nums, int $k) {
@@ -31,9 +31,9 @@ class Solution {
         return $nums;
     }
     /**
-     * @var int[] $nums
-     * @var int $start
-     * @var int $end
+     * @param int[] $nums
+     * @param int $start
+     * @param int $end
      * @return int[]
      */
     public function reverse(array $nums, int $start, int $end) {
@@ -48,6 +48,30 @@ class Solution {
     }
 }
 
-$solution = new Solution();
-$rotatedArr = $solution->rotateArray([1,2,3,4,6,7,8], 3);
+// $solution = new Solution();
+// $rotatedArr = $solution->rotateArray([1,2,3,4,6,7,8], 3);
+// print_r($rotatedArr);
+
+class OtherSolution {
+    /**
+     * @param int[] $nums
+     * @param int $k
+     * @return ?int[]
+     */
+    function rotateArray(array $nums, $k) {
+        if ( count($nums) == 0) {
+            return;
+        }
+        $n = count($nums);
+        $k %= $n;
+        if ($k == 0) {
+            return;
+        }
+        return array_merge(
+            array_slice($nums, -$k), array_slice($nums, 0, $n-$k)
+        );
+    }
+}
+$solution = new OtherSolution();
+$rotatedArr = $solution->rotateArray([1,2,3,4,5,6,7], 3);
 print_r($rotatedArr);
